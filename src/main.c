@@ -11,32 +11,32 @@ enemy_t enemy;
  **/
 int main(int argc, char **argv)
 {
-	/** instance variable **/
-	SDL_Instance instance;
-	/** create & initialize the window **/
-	if (init_instance(&instance) != 0)
-		return (1);
-	/** initialize the game **/
-	init_game();
-	if (argc > 1)
-		make_map(argv);
-	while ("C is awesome")
-	{
-		SDL_SetRenderDrawColor(instance.ren, 76, 76, 76, 0);
-		SDL_RenderClear(instance.ren);
+        /** instance variable **/
+        SDL_Instance instance;
+        /** create & initialize the window **/
+        if (init_instance(&instance) != 0)
+                return (1);
+        /** initialize the game **/
+        init_game();
+        if (argc > 1)
+                make_map(argv);
+        while ("C is awesome")
+        {
+                SDL_SetRenderDrawColor(instance.ren, 76, 76, 76, 0);
+                SDL_RenderClear(instance.ren);
 
-		/** handle the input keys from the user **/
-		if (poll_events(instance) == 1)
-			break;
-		/** draw the wall, ceiling, map & sprite **/
-		display(instance);
-		SDL_RenderPresent(instance.ren);
-	}
-	/** destroy the renderer & the window & quit**/
-	SDL_DestroyRenderer(instance.ren);
-	SDL_DestroyWindow(instance.win);
-	SDL_Quit();
-	return (0);
+                /** handle the input keys from the user **/
+                if (poll_events(instance) == 1)
+                        break;
+                /** draw the wall, ceiling, map & sprite **/
+                display(instance);
+                SDL_RenderPresent(instance.ren);
+        }
+        /** destroy the renderer & the window & quit**/
+        SDL_DestroyRenderer(instance.ren);
+        SDL_DestroyWindow(instance.win);
+        SDL_Quit();
+        return (0);
 }
 
 /**
@@ -47,12 +47,12 @@ int main(int argc, char **argv)
  **/
 void display(SDL_Instance instance)
 {
-	ray_cast(instance);
-	add_enemy(instance);
-	draw_map(instance);
-	display_player(instance);
-	add_weapon(instance);
-	draw_sprite_map(instance);
+        ray_cast(instance);
+        add_enemy(instance);
+        draw_map(instance);
+        display_player(instance);
+        add_weapon(instance);
+        draw_sprite_map(instance);
 }
 
 /**
@@ -62,12 +62,12 @@ void display(SDL_Instance instance)
  **/
 void init_game(void)
 {
-	/** initialize the player x, y, width, heigth and deltas **/
-	player.x = 150;
-	player.y = 400;
-	player.w = 12;
-	player.h = 12;
-	player.a = PI3;
-	player.dx = cos(player.a) * 5;
-	player.dy = sin(player.a) * 5;
+        /** initialize the player x, y, width, heigth and deltas **/
+        player.x = 150;
+        player.y = 400;
+        player.w = 12;
+        player.h = 12;
+        player.a = PI3;
+        player.dx = cos(player.a) * 5;
+        player.dy = sin(player.a) * 5;
 }

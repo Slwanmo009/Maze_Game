@@ -38,8 +38,8 @@
 **/
 typedef struct SDL_Instance
 {
-	SDL_Window *win;
-	SDL_Renderer *ren;
+        SDL_Window *win;
+        SDL_Renderer *ren;
 } SDL_Instance;
 
 /**
@@ -56,7 +56,7 @@ typedef struct SDL_Instance
  **/
 typedef struct btn_keys
 {
-	int w, a, d, s, e, x;
+        int w, a, d, s, e, x;
 } btn_keys;
 
 /**
@@ -71,7 +71,7 @@ typedef struct btn_keys
  **/
 typedef struct player_s
 {
-	float x, y, w, h, a, dx, dy;
+        float x, y, w, h, a, dx, dy;
 } player_t;
 
 extern player_t player;
@@ -85,8 +85,8 @@ extern player_t player;
  **/
 typedef struct enemy_s
 {
-	float x, y, z;
-	char *path;
+        float x, y, z;
+        char *path;
 } enemy_t;
 
 extern enemy_t enemy;
@@ -111,7 +111,7 @@ float FixAng(float a);
 void display_player(SDL_Instance instance);
 void draw_map(SDL_Instance ins);
 void draw_scene(SDL_Instance ins, int n, float h, float ray_a, float shade,
-		float rx, float ry, int m_txr);
+                float rx, float ry, int m_txr);
 void draw_floor(SDL_Instance ins, float ln_off, int n, float line, float ra);
 void draw_roof(SDL_Instance ins, float ln_off, int n, float line, float ra);
 
